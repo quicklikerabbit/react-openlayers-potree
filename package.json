@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^4.9.12",
     "@material-ui/icons": "^4.9.1",
+    "@pix4d/three-potree-loader": "0.0.8",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -15,10 +16,12 @@
     "@types/pretty": "^2.0.0",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.7",
+    "@types/three": "^0.103.2",
     "ol": "^6.3.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
+    "three": "^0.116.1",
     "typescript": "~3.7.2"
   },
   "scripts": {

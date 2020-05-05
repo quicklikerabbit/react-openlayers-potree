@@ -4,6 +4,7 @@ import OlMap from './Components/Map/OlMap'
 import { makeStyles, createStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppMenu from './Components/AppMenu/AppMenu';
+import Viewer from './Components/Viewer/Viewer';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <CssBaseline />
       <AppMenu />
       <OlMap />
+      <Viewer />
     </div>
   );
 }
