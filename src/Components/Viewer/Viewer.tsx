@@ -21,6 +21,7 @@ export default function Viewer() {
         pco.material.size = 1.0;
       })
       .catch(err => console.error(err));
+    return () => viewer.destroy();
   }, [])
   return (
     <div id="target">

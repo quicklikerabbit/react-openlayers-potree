@@ -10,6 +10,7 @@ export default function OlMap() {
       console.log(getZoom(evt));
       console.log(getCoordinates(evt))
     })
+    return () => olMap.setTarget(undefined);
   }, []);
 
   return (
