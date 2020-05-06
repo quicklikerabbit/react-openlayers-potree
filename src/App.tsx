@@ -5,7 +5,10 @@ import { makeStyles, createStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppMenu from './Components/AppMenu/AppMenu';
 import Viewer from './Components/Viewer/Viewer';
-
+import {
+  Switch,
+  Route
+} from "react-router-dom";
 
 function App() {
   const useStyles = makeStyles(() =>
@@ -21,8 +24,14 @@ function App() {
     <div className={classes.root}>
       <CssBaseline />
       <AppMenu />
-      <OlMap />
-      <Viewer />
+      <Switch>
+        <Route path="/map">
+          <OlMap />
+        </Route>
+        <Route path="/viewer">
+          <Viewer />
+        </Route>
+      </Switch>
     </div>
   );
 }

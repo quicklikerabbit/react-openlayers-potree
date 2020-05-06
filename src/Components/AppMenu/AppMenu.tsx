@@ -17,6 +17,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import MapIcon from '@material-ui/icons/Map';
 import ImageSearchIcon from '@material-ui/icons/ImageSearch';
+import { Link as RouterLink } from 'react-router-dom';
+import Link from '@material-ui/core/Link';
 
 const drawerWidth = 240;
 
@@ -131,14 +133,18 @@ export default function AppMenu() {
         </div>
         <Divider />
         <List>
-          <ListItem button key={'Map'}>
-            <ListItemIcon><MapIcon /></ListItemIcon>
-            <ListItemText primary={'Map'} />
-          </ListItem>
-          <ListItem button key={'Viewer'}>
-            <ListItemIcon><ImageSearchIcon /></ListItemIcon>
-            <ListItemText primary={'Viewer'} />
-          </ListItem>
+          <Link component={RouterLink} to="/map">
+            <ListItem button key={'Map'}>
+              <ListItemIcon><MapIcon /></ListItemIcon>
+              <ListItemText primary={'Map'} />
+            </ListItem>
+          </Link>
+          <Link component={RouterLink} to="/viewer">
+            <ListItem button key={'Viewer'}>
+              <ListItemIcon><ImageSearchIcon /></ListItemIcon>
+              <ListItemText primary={'Viewer'} />
+            </ListItem>
+          </Link>
         </List>
       </Drawer>
     </div>
