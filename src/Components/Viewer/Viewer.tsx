@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { viewer } from './ViewerService';
 
 export default function Viewer() {
+  let viewerDiv = useRef<HTMLInputElement>(null);
   useEffect(() => {
-    viewer.initialize(document.getElementById("target") as HTMLElement);
+    viewer.initialize(viewerDiv.current as HTMLElement);
 
     viewer
       .load(
@@ -24,7 +25,7 @@ export default function Viewer() {
     return () => viewer.destroy();
   }, [])
   return (
-    <div id="target">
+    <div id="target" ref={viewerDiv}>
     </div>
   )
 }

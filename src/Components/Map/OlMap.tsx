@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import 'ol/ol.css';
 import { olMap, getLatLon, getZoom, getCoordinates } from './OlMapService'
 
 export default function OlMap() {
+  let mapDiv = useRef<HTMLInputElement>(null);
   useEffect(() => {
-    olMap.setTarget('map')
+    olMap.setTarget(mapDiv.current as HTMLElement)
     olMap.on('click', (evt) => {
       console.log(getLatLon(evt));
       console.log(getZoom(evt));
@@ -14,7 +15,7 @@ export default function OlMap() {
   }, []);
 
   return (
-    <div id="map">
+    <div id="map" ref={mapDiv}>
     </div>
   )
 }
